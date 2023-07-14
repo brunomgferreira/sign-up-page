@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="image-container"></div>
+    <form>
+        <div class="grid">
+        <h1>Get started</h1>
+            <div class="input-container">
+                <label for="f-name">First Name</label>
+                <span>First Name</span>
+                <input type="text" name="f-name" id="f-name" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-container">
+                <label for="l-name"></label>
+                <span>Last Name</span>
+                <input type="text" name="l-name" id="l-name" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-container">
+                <label for="email"></label>
+                <span>E-Mail</span>
+                <input type="email" name="email" id="email" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-container">
+                <label for="phone"></label>
+                <span>Phone</span>
+                <input type="tel" name="phone" id="phone" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-container">
+                <label for="user-password"></label>
+                <span>Password</span>
+                <input type="password" name="user-password" id="user-password" required>
+                <div class="error"></div>
+            </div>
+            <div class="input-container">
+                <label for="user-password-confirm"></label>
+                <span>Confirm Password</span>
+                <input type="password" name="user-password-confirm" id="user-password-confirm" required>
+                <div class="error"></div>
+            </div>
+            <div class="btn">
+                <button type="submit">Create Account</button>
+            </div>
+        </div>
+    </form>
+    <script src="script.js"></script>
+</body>
+</html>
