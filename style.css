@@ -80,7 +80,7 @@ input:focus {
     background-color: var(--gray);
     opacity: 0;
     padding: 2px 8px;
-    transition: 0.15s;
+    transition: 0.3s;
 }
 
 .input-container span {

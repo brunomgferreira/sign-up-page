@@ -5,56 +5,42 @@ const phone = document.getElementById('phone');
 const user_password = document.getElementById('user-password');
 const user_password_confirm = document.getElementById('user-password-confirm');
 
-const f_name_span = f_name.previousElementSibling;
-const l_name_span = l_name.previousElementSibling;
-const email_span = email.previousElementSibling;
-const phone_span = phone.previousElementSibling;
-const user_password_span = user_password.previousElementSibling;
-const user_password_confirm_span = user_password_confirm.previousElementSibling;
-
-const f_name_label = document.querySelector('label[for="f-name"]');
-const l_name_label = document.querySelector('label[for="l-name"]');
-const email_label = document.querySelector('label[for="email"]');
-const phone_label = document.querySelector('label[for="phone"]');
-const user_password_label = document.querySelector('label[for="user-password"]');
-const user_password_confirm_label = document.querySelector('label[for="user-password-confirm"]');
-
 f_name.addEventListener('focus', labelActive);
 f_name.addEventListener('blur', labelInactive);
-l_name.addEventListener('focus', l_name_func);
-email.addEventListener('focus', email_func);
-phone.addEventListener('focus', phone_func);
-user_password.addEventListener('focus', user_password_func);
-user_password_confirm.addEventListener('focus', user_password_confirm_func);
+
+l_name.addEventListener('focus', labelActive);
+l_name.addEventListener('blur', labelInactive);
+
+email.addEventListener('focus', labelActive);
+email.addEventListener('blur', labelInactive);
+
+phone.addEventListener('focus', labelActive);
+phone.addEventListener('blur', labelInactive);
+
+user_password.addEventListener('focus', labelActive);
+user_password.addEventListener('blur', labelInactive);
+
+user_password_confirm.addEventListener('focus', labelActive);
+user_password_confirm.addEventListener('blur', labelInactive);
 
 
-function labelActive() {
-    f_name_label.style.opacity = 1;
-    f_name_label.backgroundColor = 'var(--gray)';
-    f_name_span.style.opacity = 0;
+function labelActive(e) {
+    e.target.previousElementSibling.style.opacity = 1;
+    e.target.previousElementSibling.backgroundColor = 'var(--gray)';
+    e.target.nextElementSibling.style.opacity = 0;
 }
 
-function labelInactive() {
-    f_name_label.style.opacity = 0;
-    f_name_span.style.opacity = 1;
+function labelInactive(e) {
+    e.target.previousElementSibling.style.opacity = 0;
+    if (e.target.value.trim() !== '') e.target.nextElementSibling.style.opacity = 0;
+    else e.target.nextElementSibling.style.opacity = 1;
 }
 
-function l_name_func(e) {
-
-}
-
-function email_func(e) {
-
-}
-
-function phone_func(e) {
-
-}
-
-function user_password_func(e) {
-
-}
-
-function user_password_confirm_func(e) {
-
+window.onload = () => {
+    if(f_name.value.trim() !== '') f_name.nextElementSibling.style.opacity = 0;
+    if(l_name.value.trim() !== '') l_name.nextElementSibling.style.opacity = 0;
+    if(email.value.trim() !== '') email.nextElementSibling.style.opacity = 0;
+    if(phone.value.trim() !== '') phone.nextElementSibling.style.opacity = 0;
+    if(user_password.value.trim() !== '') user_password.nextElementSibling.style.opacity = 0;
+    if(user_password_confirm.value.trim() !== '') user_password_confirm.nextElementSibling.style.opacity = 0;
 }
